@@ -1,0 +1,165 @@
+Raw shape: (768, 7)
+['Region', ' Date', ' Frequency', ' Estimated Unemployment Rate (%)', ' Estimated Employed', ' Estimated Labour Participation Rate (%)', 'Area']
+Removed 28 completely blank rows -> 740 records
+Missing values:
+ Region                     0
+Date                       0
+Frequency                  0
+UnemploymentRate           0
+Employed                   0
+LabourParticipationRate    0
+Area                       0
+dtype: int64
+Duplicate rows: 0
+Frequency values: <StringArray>
+['Monthly']
+Length: 1, dtype: str
+Records with unemployment rate = 0: 11
+Clean shape: (740, 14)
+                         count  ...         std
+Date                       740  ...         NaN
+UnemploymentRate         740.0  ...       10.72
+Employed                 740.0  ...  8087988.43
+LabourParticipationRate  740.0  ...        8.11
+Year                     740.0  ...        0.49
+Month                    740.0  ...        3.24
+LabourForce              740.0  ...  8856377.54
+Unemployed               740.0  ...   1205022.7
+
+[8 rows x 8 columns]
+
+States: 28 | Months: 14 | Period: 2019-05-31 to 2020-06-30
+
+Rows per state (full panel = 28):
+Region
+Chandigarh         12
+Sikkim             17
+Jammu & Kashmir    21
+Goa                24
+Puducherry         26
+Assam              26
+Uttarakhand        27
+Meghalaya          27
+dtype: int64
+
+IQR upper fence = 32.7% ; outliers = 35 (occur in: ['Apr-20', 'Aug-19', 'Dec-19', 'Feb-20', 'Jan-20', 'Jun-20', 'May-19', 'May-20', 'Sep-19'])
+
+National monthly unemployment (%):
+            SimpleAvg  Weighted    LPR
+Date                                  
+2019-05-31       8.87      7.04  43.90
+2019-06-30       9.30      7.88  43.75
+2019-07-31       9.03      7.37  43.71
+2019-08-31       9.64      8.08  43.65
+2019-09-30       9.05      7.08  44.30
+2019-10-31       9.90      8.11  44.00
+2019-11-30       9.87      7.25  44.11
+2019-12-31       9.50      7.73  43.67
+2020-01-31       9.95      7.24  44.05
+2020-02-29       9.96      7.78  43.72
+2020-03-31      10.70      8.67  43.08
+2020-04-30      23.64     24.16  35.14
+2020-05-31      24.88     23.57  38.50
+2020-06-30      11.90     11.04  40.55
+
+Rural vs urban (weighted):
+ Area        Rural  Urban
+Date                    
+2019-05-31   6.31   8.59
+2019-06-30   7.70   8.25
+2019-07-31   6.92   8.34
+2019-08-31   7.49   9.35
+2019-09-30   5.91   9.57
+2019-10-31   8.04   8.25
+2019-11-30   6.46   8.90
+2019-12-31   7.07   9.05
+2020-01-31   6.08   9.72
+2020-02-29   7.36   8.66
+2020-03-31   8.33   9.41
+2020-04-30  23.56  25.48
+2020-05-31  22.57  25.87
+2020-06-30  10.58  12.07
+
+State impact table:
+                   PreCovid  Lockdown  June2020  Rise_pp  Recovered_pp
+Region                                                               
+Puducherry             1.6      75.4       4.6     73.8          70.9
+Jharkhand             14.3      57.1      20.5     42.8          36.7
+Tamil Nadu             2.8      40.9      13.5     38.0          27.4
+Bihar                 13.8      47.2      16.5     33.4          30.8
+Karnataka              3.2      24.5       8.5     21.2          16.0
+Haryana               22.9      40.3      32.5     17.4           7.8
+Madhya Pradesh         4.7      21.8       9.6     17.1          12.3
+Andhra Pradesh         5.0      22.0       3.4     17.0          18.6
+Telangana              4.7      21.4      13.1     16.7           8.3
+Kerala                 7.0      21.4      19.9     14.5           1.5
+Uttar Pradesh         10.6      24.0      10.8     13.3          13.2
+Maharashtra            5.4      18.3       9.7     12.9           8.6
+Odisha                 3.4      16.1       3.4     12.7          12.7
+Delhi                 14.2      26.4      19.6     12.2           6.8
+Gujarat                5.2      16.0       3.0     10.9          13.1
+West Bengal            6.6      16.9       7.4     10.3           9.5
+Rajasthan             12.8      20.9      13.4      8.1           7.4
+Goa                    8.5      15.9       NaN      7.4           NaN
+Meghalaya              4.0      11.0       1.4      7.0           9.7
+Punjab                11.0      16.5      15.3      5.5           1.2
+Chhattisgarh           7.7      13.0      18.6      5.3          -5.6
+Uttarakhand            5.8       9.4       7.9      3.6           1.5
+Assam                  6.4       9.5       1.7      3.1           7.8
+Sikkim                 6.3       8.5       4.2      2.2           4.3
+Himachal Pradesh      19.1      20.1       6.0      1.0          14.2
+Tripura               29.0      27.5      23.2     -1.5           4.3
+Jammu & Kashmir       17.2       7.6      19.0     -9.6         -11.4
+Chandigarh            16.3       NaN       7.2      NaN           NaN
+
+Zone averages by phase:
+ Phase       Pre-Covid  ...  Unlock (Jun)
+Zone                   ...              
+Central           8.1  ...           9.7
+East              8.2  ...          12.5
+North            14.0  ...          17.5
+North-East        8.1  ...           3.9
+South             4.1  ...          10.8
+West              5.1  ...           7.2
+
+[6 rows x 4 columns]
+
+Employed persons, Apr-20 vs Feb-20 (complete states): -31.4%
+
+Year-on-year (May/Jun):
+ Year  2019   2020
+May   7.04  23.57
+Jun   7.88  11.04
+Pre-Covid trend, Rural: +0.10 pp/month; range 7.0-9.1%
+Pre-Covid trend, Urban: +0.12 pp/month; range 10.2-12.0%
+
+Correlation:
+                          UnemploymentRate  Employed  LabourParticipationRate
+UnemploymentRate                     1.00     -0.22                     0.00
+Employed                            -0.22      1.00                     0.01
+LabourParticipationRate              0.00      0.01                     1.00
+
+Mann-Whitney (lockdown > pre-Covid): U=43320, p=3.72e-21  | medians 20.0 vs 7.1
+Welch t-test urban vs rural (pre-Covid): t=4.41, p=1.25e-05 | means 10.8 vs 8.1
+
+=== KEY NUMBERS ===
+Pre-Covid weighted avg (May-19..Feb-20): 7.55%
+Peak: Apr-20 24.16% | Apr-20 24.16% | May-20 23.57% | Jun-20 11.04%
+Worst state-month: ['Puducherry', 'Urban', 'Apr-20', np.float64(76.74)]
+Top 5 states by lockdown-rise:
+ Region
+Puducherry    73.8
+Jharkhand     42.8
+Tamil Nadu    38.0
+Bihar         33.4
+Karnataka     21.2
+Name: Rise_pp, dtype: float64
+Least affected:
+ Region
+Sikkim              2.2
+Himachal Pradesh    1.0
+Tripura            -1.5
+Jammu & Kashmir    -9.6
+Chandigarh          NaN
+Name: Rise_pp, dtype: float64
+LPR (simple avg) Feb-20 -> Apr-20: 43.72 -> 35.14
